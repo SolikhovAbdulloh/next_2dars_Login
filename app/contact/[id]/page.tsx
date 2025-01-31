@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const ContactDetails = ({params}:{params:{id:string}}) => {
-  return (
-    <div>ContactDetails {params.id}</div>
-  )
-}
+const ContactDetails = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+  return <div>ContactDetails {id}</div>;
+};
 
-export default ContactDetails
+export default ContactDetails;
